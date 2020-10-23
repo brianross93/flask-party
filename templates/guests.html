@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Guests who are coming to the big party</p>
+    {% for post in posts %}
+        <ul>
+            <li>Name: {{ post.name }}</li>
+            <li>RSVP: {{ post.rsvp}}</li>
+            <li>Date: {{ post.plus_one}}</li>
+            <li>Meal: {{ post.meal}}</li>
+
+        </ul>
+        
+    {% endfor %}
+</body>
+</html>
