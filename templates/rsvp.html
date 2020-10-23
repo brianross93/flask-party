@@ -6,7 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>RSVP Status: {{coming}}</h2>
-    <h2>RSVP Status: {{busy}}</h2>
+    <h2>RSVP Confirmed</h2>
+    <ul>
+    {% for guest in guest_friends %}
+   
+    {% if guest.rsvp %}
+    
+            <li> 
+            {{guest.name}}
+            </li>   
+       
+    {% endif %}
+     {% endfor %}
+    </ul>
 </body>
 </html>

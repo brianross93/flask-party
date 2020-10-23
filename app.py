@@ -13,25 +13,23 @@ app = Flask(__name__)
 my_name = 'Brian'
 date = 'April 10'
 time = '12:00 AM'
-yes_rsvp = 'Yes'
-no_rsvp = 'No'
 #Making Guest List a global variable so all the functions can access it if they want to
 guest_friends = [
         {
             'name': "Benny",
-            'rsvp': "Yes",
+            'rsvp': True,
             'plus_one': "Karen",
             'meal': "Chicken"
         },
         {
             'name': "Jose",
-            'rsvp': "Yes",
+            'rsvp': True,
             'plus_one': "Tara",
             'meal': "Vegetarian"
         },
         {
             'name': "Barney",
-            'rsvp': "Yes",
+            'rsvp': True,
             'plus_one': "Taylor",
             'meal': "Chicken"
         }
@@ -57,7 +55,7 @@ def guests():
 @app.route("/rsvp")
 def rsvp():
     
-    return render_template("rsvp.html", coming=yes_rsvp, busy=no_rsvp)
+    return render_template("rsvp.html", guest_friends=guest_friends)
 
 # Runs code
 if __name__ == "__main__":
