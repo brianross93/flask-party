@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RSVP</title>
 </head>
-
+    <label id="name">Name</label>
         <form action="/guests" method="POST">
             <input type="text" Name="Text">
         </form>
+    <label id="email">Email</label>
         <form action="/guests" method="POST">
-            <input type="email" name="Email">
+            <input type="email" name="email">
         </form>
+        <label>Plus 1? (Optional)</label>
         <form action="/guests" method="POST">
-            <input type="text" Plus One Name?>
+            <input type="text" Name="plus-one">
+        </form>
+        <label> Phone Number</label>
+        <form action="/guests" method="POST">
+            <input type="number" name="phone">
+        </form>
+        <label> Costume Description</label>
+        <form action="/guests" method="POST">
+            <input type="text" name="costume">
         </form>
 <body>
     <h2>RSVP Confirmed</h2>

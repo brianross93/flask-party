@@ -14,26 +14,7 @@ my_name = 'Brian'
 date = 'April 10'
 time = '12:00 AM'
 #Making Guest List a global variable so all the functions can access it if they want to
-guest_friends = [
-        {
-            'name': "Benny",
-            'rsvp': True,
-            'plus_one': "Karen",
-            'meal': "Chicken"
-        },
-        {
-            'name': "Jose",
-            'rsvp': True,
-            'plus_one': "Tara",
-            'meal': "Vegetarian"
-        },
-        {
-            'name': "Barney",
-            'rsvp': True,
-            'plus_one': "Taylor",
-            'meal': "Chicken"
-        }
-    ]
+guest_friends = []
 # Homepage function to display my name
 @app.route('/')
 def homepage():
@@ -52,9 +33,13 @@ def guests():
     return render_template("guests.html", posts=guest_friends)
 
 # Display RSVP status
-@app.route("/rsvp")
+@app.route("/rsvp", methods=['GET', 'POST'])
 def rsvp():
-    
+    if request is 'GET':
+        return render_template("rsvp.html", guest_friends=guest_friends)
+  else:
+    add new guest to list
+    then, show the updated list
     return render_template("rsvp.html", guest_friends=guest_friends)
 
 # Runs code
