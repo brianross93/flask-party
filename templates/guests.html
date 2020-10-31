@@ -8,7 +8,11 @@
 <body>
     <p>Guests who are coming to the big party
 
-        {{guest_friends}}
+        <ul>
+            {% for guest in guests %}
+              <li>{{ guest.name }} is bringing {{ guest.plus_one }} and is dressed as a {{guest.costume}}</li>
+            {% endfor %}
+          </ul>
     </p>
     
 </body>

@@ -2,7 +2,9 @@
 This code is used to display a guest list of who is coming to 
 my birthday party. This is a project to learn Flask
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from guests import Guest
+
 
 
 # This code initializes a basic flask application.
@@ -28,19 +30,24 @@ def about():
     return render_template('about.html', time=time, date=date)
 
 # Display Guests who are coming
-@app.route("/guests")
+@app.route('/guests', methods=['GET', 'POST'])
 def guests():
-    return render_template("guests.html", posts=guest_friends)
+  if request.method == 'POST':
+    guest_name = request.form.get('name')
+    guest_email = request.form.get('email')
+    guest_plus_one = request.form.get("plus-one")
+    guest_phone = request.form.get('phone')
+    guest_costume = request.form.get('costume')
+    guest = Guest(guest_name, guest_email, guest_plus_one, guest_phone, guest_costume)
+    guest_friends.append(guest)
+    return render_template('guests.html', guests=guest_friends)
 
 # Display RSVP status
 @app.route("/rsvp", methods=['GET', 'POST'])
 def rsvp():
-    if request is 'GET':
-        return render_template("rsvp.html", guest_friends=guest_friends)
-  else:
-    add new guest to list
-    then, show the updated list
+
     return render_template("rsvp.html", guest_friends=guest_friends)
+        
 
 # Runs code
 if __name__ == "__main__":
