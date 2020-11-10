@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>When and Where</title>
-</head>
-<body>
-    <h1> About Page</h1>
-   
-    <p>{{time}}</p>
-    <p>{{date}}</p>
+{% extends 'base.html' %}
 
-</body>
-</html>
+<section>
+  <h3>Fall Events Details</h3>
+  <p>The party is on {{ date }} at {{ time }}</p>
+</section>
